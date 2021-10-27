@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- PG크로스브라우징필수내용 -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <!-- // PG크로스브라우징필수내용 -->
+
+    <title></title>
+    <!--@css(/layout/basic/css/common.css)--><!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
+    <!--@css(/layout/basic/css/ec-base-ui.css)-->
+    <!--@css(/layout/basic/css/ec-base-tooltip.css)-->
+    <!--@css(/layout/basic/css/ec-base-help.css)-->
+    <!--@css(/layout/basic/css/ec-base-product.css)-->
+    <!--@css(/layout/basic/css/ec-base-paginate.css)-->
+    <!--@css(/layout/basic/css/ec-base-tab.css)-->
+    <!--@css(/layout/basic/css/ec-base-button.css)-->
+    <!--@css(/layout/basic/css/ec-base-box.css)-->
+    <!--@css(/layout/basic/css/ec-base-table.css)-->
+    <!--@css(/layout/basic/css/ec-base-desc.css)-->
+	<!--@css(/layout/basic/css/layout.css)-->
+  <!--@css(/layout/basic/css/kyj.css)-->
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap&subset=korean" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap&subset=korean" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    <!-- 스마트디자인에서는 JQuery 1.4.4 버전이 내장되어있습니다. 추가로 호출하면 충돌이 생길 수 있습니다. -->
+    <!--@js(/layout/basic/js/basic.js)-->
+    <!--@js(/js/common.js)-->
+    <!--@js(/js/module/layout/quick_view.js)-->
+	<!--@js(/layout/basic/js/jquery.bpopup.min.js)-->
+	<!--@js(/layout/basic/js/mcommon.js)-->
+</head>
+<body>
+<div id="header" class="cboth">
+	<div class="header_sec01 cboth" id="comment_top">
+		<div class="top_logo fleft">
+           <div style="margin-top:10px;"><a href="/"><img src="/web/upload/category/editor/2021/09/06/e825b053357af37b794cb37dce46547e.png"></a></div>
+        </div>
+		<div class="topmenu_area"><!-- 상단 메뉴 수정하는곳 -->
+			<div class="category_menu" module="custom_moduleedit_2"><a href="/shopinfo/company.html">BRAND STORY</a></div>
+			<div class="category_menu" module="custom_moduleedit_3"><a href="/board/event/8/?board_no=8&category_no=1">EVENT</a></div>
+			<div class="category_menu" module="custom_moduleedit_4"><a href="/board/free/list.html?board_no=1">NOTICE</a></div>
+			<div class="category_menu top_cate" module="custom_moduleedit_5">
+				<a href="#none">SHOP</a>
+				<div id="category" module="Layout_category">
+					<!--@js(/js/module/layout/category.js)-->
+					<div class="position"><!-- 상단 카테고리 자동출력 -->
+						<ul>
+							<li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+							<li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+							<li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+						</ul>
+					</div>
+				</div><!-- //Layout_category -->
+			</div><!-- //top_cate -->
+		</div><!-- //topmenu_area -->
+
+		<div class="top_search_area fright">
+			<ul>
+				<li class="icon_menber">
+					<a module="Layout_statelogoff" href="/member/login.html"><img src="/images/top_mypage.png"></a>
+					<a module="Layout_stateLogon" href="/myshop/index.html"><img src="/images/top_mypage.png"></a>
+					<ul><!-- 상단 마이페이지 레이어 수정하는곳 -->
+						<li module="Layout_statelogoff"><a href="/member/login.html">로그인</a></li>
+						<li module="Layout_statelogoff"><a href="/member/join.html">회원가입</a></li>
+						<li module="Layout_stateLogon"><a href="{$action_logout}">로그아웃</a></li>
+						<li module="Layout_stateLogon"><a href="/member/modify.html">정보수정</a></li>
+						<li><a href="/myshop/index.html">마이페이지</a></li>
+						<li><a href="/myshop/order/list.html">주문조회</a></li>
+					</ul>
+				</li>
+				<li class="basket">
+					<a href="/order/basket.html">
+						<span module="Layout_orderBasketcount">{$basket_count}</span>
+						<img src="/images/top_cart.png">
+					</a>
+				</li>
+				<li id="icon_search"><a href="#none"><img src="/images/top_search.png"></a></li>
+			</ul>
+		</div><!-- //top_search_area -->
+	</div><!-- //header_sec01 -->
+
+	<div id="quick_search">
+		<div class="quick_searchClose"><img src="/images/icon_close_search.png" class="rotate"></div>
+		<div module="Layout_SearchHeader">
+			<!--
+			$product_page=/product/detail.html
+			$category_page=/product/list.c
+			-->
+			<fieldset>
+				<legend>검색</legend>
+				{$form.keyword}<img src="/images/icon_search_btn.png" alt="검색" class="search_btn" onclick="{$action_search_submit}"/>
+			</fieldset>
+		</div>
+	</div><!-- //quick_search -->
+</div><!-- //header -->
+
+<div class="sub_top_ban">
+  <!-- 상단 배너 변경하는곳 -->
+	<!-- <div class="inner_sub_top_ban">
+		<img src="/images/sub_top_ban.jpg">
+	</div> -->
+</div><!-- //sub_top_ban -->
+
+<hr class="layout" />
+<div id="wrap">
+    <div id="container">
+        <div id="contents">
+            <!--@contents-->
+        </div><hr class="layout" />
+    </div><hr class="layout" />
+
+    <div id="quick"></div>
+</div><hr class="layout" />
+
+<div id="footer" class="cboth">
+	<div class="cboth width1200">
+		<div class="footer_section01">
+			<div class="cboth ft_copy">
+				<ul>
+					<li><a href="/shopinfo/company.html">BRAND STORY</a></li><li>|</li>
+					<li><a href="/member/agreement.html">AGREEMENT</a></li><li>|</li>
+					<li><a href="/member/privacy.html" class="policy">PRIVACY POLICY</a></li><li>|</li>
+					<li><a href="/shopinfo/guide.html">GUIDE</a></li>
+				</ul>
+				<ul module="Layout_multishopListitem">
+					<li><a href="//{$shop_domain}/"><img src="//img.cafe24.com/img/common/global/{$language}_32x24.png" alt="" /></a></li>
+					<li><a href="//{$shop_domain}/"><img src="//img.cafe24.com/img/common/global/{$language}_32x24.png" alt="" /></a></li>
+				</ul>
+			</div><!-- //ft_copy -->
+
+			<div class="cboth ft_copy2" module="Layout_footer">
+				<div class="company_name">{$company_name}</div>
+				COMPANY : {$company_name}&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;OWNER : {$president_name}&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;ADDRESS : {$mall_zipcode} {$mall_addr1} {$mall_addr2}&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;CALL : {$phone}<br>
+				개인정보관리책임자 : <a href="mailto:{$cpo_email}">{$cpo_name}({$cpo_email})</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;사업자등록번호 : {$company_regno} {$biz_no_link}&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;통신판매업 신고번호 : {$network_regno}<br>
+				<div class="pdt30">Copyright {$mall_name}. All rights reserved.&nbsp;&nbsp;Hosting by 카페24(주)</div>
+			</div><!-- //ft_copy2 -->
+		</div><!-- //footer_section01 -->
+
+		<div class="footer_section02" module="Layout_footer"><!-- 하단 쇼핑몰정보 + 계좌정보 수정하는곳 -->
+			<span>{$phone}</span>
+			{$runtime}<br>
+		</div><!-- //footer_section02 -->
+	</div><!-- //width1200 -->
+</div><!-- //footer -->
+
+<!-- 결제를 위한 필수 영역 -->
+<div id="progressPaybar" style="display:none;">
+    <div id="progressPaybarBackground" class="layerProgress"></div>
+    <div id="progressPaybarView">
+        <div class="box">
+            <p class="graph">
+                <span><img src="//img.echosting.cafe24.com/skin/base_ko_KR/layout/txt_progress.gif" alt="현재 결제가 진행중입니다." /></span>
+                <span><img src="//img.echosting.cafe24.com/skin/base/layout/img_loading.gif" alt="" /></span>
+            </p>
+            <p class="txt">
+                본 결제 창은 결제완료 후 자동으로 닫히며,결제 진행 중에 본 결제 창을 닫으시면<br />
+                주문이 되지 않으니 결제 완료 될 때 까지 닫지 마시기 바랍니다.
+            </p>
+        </div>
+    </div>
+</div>
+<!-- //결제를 위한 필수 영역 -->
+
+<div module="Layout_multishopShipping">
+    <!--@css(/layout/basic/css/ec-base-layer.css)-->
+    <!--@css(/css/module/layout/multishopShipping.css)-->
+    <!--@js(/js/module/layout/multishopShipping.js)-->
+    <div class="dimmed"></div>
+    <div class="worldshipLayer ec-base-layer">
+        <div class="header">
+            <h3>WORLD SHIPPING</h3>
+        </div>
+        <div class="content">
+            <p class="desc">PLEASE SELECT THE DESTINATION COUNTRY AND LANGUAGE :</p>
+            <div class="select">
+                <select module="Layout_multishopShippingCountrylist">
+                    <option value="{$country_code}"{$country_default_selected}>SHIPPING TO : {$country_name}</option>
+                    <option value="{$country_code}"{$country_default_selected}>SHIPPING TO : {$country_name}</option>
+                </select>
+            </div>
+            <div class="select">
+                <select module="Layout_multishopShippingLanguagelist">
+                    <option value="{$shop_domain}"{$shop_default_selected}>LANGUAGE : {$shop_language_name}</option>
+                    <option value="{$shop_domain}"{$shop_default_selected}>LANGUAGE : {$shop_language_name}</option>
+                </select>
+            </div>
+        </div>
+        <div class="ec-base-button">
+            <a href="#none"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/link/btn_go.gif" alt="GO" /></a>
+        </div>
+        <a href="#none" class="close"><img src="//img.echosting.cafe24.com/skin/base/common/btn_close.gif" width="13" height="13" alt="close" /></a>
+    </div>
+</div>
+
+<div module="Layout_conversionPc">
+    <!--@css(/css/module/layout/conversionpc.css)-->
+    <a href="{$mobile_url}">모바일 화면보기</a>
+</div>
+<!--@css(/layout/basic/css/customizing.css)-->
+</body>
+</html>

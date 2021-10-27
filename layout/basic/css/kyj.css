@@ -1,0 +1,39 @@
+.d-none{ display: none !important}
+
+.overflow-hidden{ overflow: hidden !important; }
+
+.rel{ position: relative;}
+
+.width1950 {width: 1950;}
+
+.top_logo.fleft {margin-top: 12px !important }
+
+.topmenu_area {padding-top: 3px;}
+
+
+.inner{ max-width:1280px; margin: auto;}
+#kyjMainProduct{ padding: 80px 0 0}
+#kyjMainProduct .bigSizethumb{ width:50%; }
+#kyjMainProduct .prdList > li{
+
+    float: left;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+#comment_top{top:0;}
+
+
+.part_title {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 43px;
+    margin-bottom: 39px;
+    text-align: center;
+}
+
+
+#kyjMainProduct.ec-base-product .prdList .thumbnail a img{ border-radius:
+50%}
+
+#kyjMainProduct.ec-base-product .prdList .thumbnail .icon{ border-bottom:0 }
